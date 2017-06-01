@@ -17,8 +17,11 @@ public class Player {
 
        for(int i=0; i<10; i++ ) {
            hand[i]=i+2;
-           System.out.println(hand[i]);
+           //System.out.println(hand[i]);
        }
-       return hand;
+
+       int[] dealtHand;
+       dealtHand = new int[2]
+       return dealthand;
     }
 }
