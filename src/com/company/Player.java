@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Matt on 6/1/2017.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 public class Player {
 
     public int[] playerHand;
-    public String playerName
+    public String playerName;
 
     public Player(String name) {
         System.out.println(name);
@@ -26,15 +27,13 @@ public class Player {
 
 
     public int[] deal(){
-       int[10] hand;
+       int[] hand= new int[10];
 
        for(int i=0; i<10; i++ ) {
            hand[i]=i+2;
-           //System.out.println(hand[i]);
+           System.out.println(hand[i]);
        }
 
-       int randCard = ;
-
-      System.out.print(hand[randCard]);
+        return hand;
     }
 }
