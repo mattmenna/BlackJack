@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -8,32 +7,38 @@ import java.util.Random;
  */
 public class Player {
 
-    public int[] playerHand;
+    public int[] playerHand = {0, 0, 0, 0, 0, 0, 0, 0};
     public String playerName;
 
     public Player(String name) {
         System.out.println(name);
         playerName = name;
-
     }
 
-    public void status(String name, int[] hand){
-        System.out.println(name);
-        for(int i=0; i<10; i++ ) {
-            hand[i]=i+2;
-            System.out.println(hand[i]);
+    public int[] status(boolean displayFlag) {
+        if (displayFlag){
+        System.out.println("Hand");
+        for (int i = 0; i < playerHand.length; i++) {
+            System.out.print(playerHand[i]+ " ");
+
         }
         }
+        System.out.println();
+        return playerHand;
+    }
 
+    public void deal(int cardNumber) {
+        Random r = new Random();
+        int card = r.nextInt(9);
+        playerHand[cardNumber] = card;
+    }
 
-    public int[] deal(){
-       int[] hand= new int[10];
-
-       for(int i=0; i<10; i++ ) {
-           hand[i]=i+2;
-           System.out.println(hand[i]);
-       }
-
-        return hand;
+    public int checkSum(int[] playerHand){
+        int handsum = 0;
+        for (int i = 0; i < playerHand.length; i++) {
+            handsum = handsum + playerHand[i];
+        }
+        System.out.println(handsum);
+        return handsum;
     }
 }
